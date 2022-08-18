@@ -8,16 +8,17 @@ class ProductGrid extends StatelessWidget {
     Key? key,
     this.crossAxisCount = 4,
     this.childAspectRatio = 1,
+    this.isInMain = true,
   }) : super(key: key);
   final int crossAxisCount;
   final double childAspectRatio;
-// final bool isInMain;
+  final bool isInMain;
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        itemCount: 4,
+        itemCount: isInMain ? 4 : 20,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: crossAxisCount,
           childAspectRatio: childAspectRatio,

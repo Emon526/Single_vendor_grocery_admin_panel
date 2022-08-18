@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'consts/theme_data.dart';
 import 'controller/MenuController.dart';
+import 'inner_screens/add_product.dart';
 import 'provider/dark_theme_provider.dart';
 import 'screens/main_screen.dart';
 
@@ -52,6 +53,9 @@ class _MyAppState extends State<MyApp> {
           title: 'Grocery Admin Panel',
           theme: Styles.themeData(themeProvider.getDarkTheme, context),
           home: const MainScreen(),
+          routes: {
+            UploadProductForm.routeName: (context) => const UploadProductForm(),
+          },
         );
       }),
     );
